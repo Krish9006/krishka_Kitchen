@@ -10,7 +10,7 @@ const socialRoutes = require("./routers/social.routes");
 
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:5174", "http://localhost:5173","https://krishka-kitchen.vercel.app/"],
+    origin: ["http://localhost:5174", "http://localhost:5173", "https://krishka-kitchen.vercel.app"],
     credentials: true
 }));
 
