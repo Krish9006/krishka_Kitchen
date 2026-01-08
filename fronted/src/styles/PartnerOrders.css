@@ -1,0 +1,141 @@
+.partner-orders-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-color);
+    margin-top: 80px;
+    /* Space for navbar */
+    min-height: 80vh;
+}
+
+.partner-orders-container h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    background: linear-gradient(45deg, #ff4d4d, #ff8c8c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-id {
+    font-weight: bold;
+    color: #aaa;
+}
+
+.order-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.order-status.pending {
+    background: #ffca28;
+    color: #000;
+}
+
+.order-status.accepted {
+    background: #42a5f5;
+    color: #fff;
+}
+
+.order-status.completed {
+    background: #66bb6a;
+    color: #fff;
+}
+
+.order-status.rejected {
+    background: #ef5350;
+    color: #fff;
+}
+
+.order-user {
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.order-item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.item-qty {
+    font-weight: bold;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.item-name {
+    flex-grow: 1;
+}
+
+.order-total {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.order-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.order-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-accept {
+    background: #66bb6a;
+    color: white;
+}
+
+.btn-reject {
+    background: #ef5350;
+    color: white;
+}
+
+.btn-complete {
+    background: #42a5f5;
+    color: white;
+}
+
+.order-actions button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}

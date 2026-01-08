@@ -1,0 +1,228 @@
+/* VideoFeed.css - TikTok/Reels Style Scroll */
+
+.video-feed-container {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    background-color: black;
+    /* Immersive dark background */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.video-feed-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+/* Individual Video Card */
+.video-card {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+/* Video Player */
+.video-player {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio cover */
+}
+
+/* Overlay UI (Gradient at bottom) */
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+    /* Let clicks pass through to video */
+}
+
+.content-wrapper {
+    margin-bottom: 70px;
+    /* Space for bottom nav if any */
+    max-width: 80%;
+    /* Leave space for right sidebar actions */
+    pointer-events: auto;
+}
+
+/* Partner Badge */
+.partner-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    transition: background 0.2s;
+}
+
+.partner-badge:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Text Content */
+.dish-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dish-description {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin: 0 0 16px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA Button */
+.visit-store-btn {
+    background: #ef4f5f;
+    /* Zomato Red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(239, 79, 95, 0.4);
+    transition: transform 0.2s;
+}
+
+.visit-store-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Right Sidebar Actions */
+.actions-sidebar {
+    position: absolute;
+    right: 16px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    z-index: 10;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0;
+}
+
+.icon-container {
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s;
+}
+
+.action-btn:active .icon-container {
+    transform: scale(0.9);
+}
+
+.action-label {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Top Navigation Overlay */
+.top-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    box-sizing: border-box;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-text-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    transition: color 0.2s;
+}
+
+.nav-text-link:hover {
+    color: white;
+}
+
+.highlight-btn {
+    background: white;
+    color: black;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-shadow: none;
+}
+
+/* Loading State */
+.loading-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: white;
+    font-size: 1.2rem;
+}
