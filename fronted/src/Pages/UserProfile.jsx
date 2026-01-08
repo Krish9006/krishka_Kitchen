@@ -21,7 +21,7 @@ const UserProfile = () => {
                 navigate('/login');
                 return;
             }
-            const response = await axios.get('http://localhost:3000/api/user/profile', {
+            const response = await axios.get('https://krishka-kitchen-2.onrender.com/api/user/profile', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUser(response.data);
@@ -42,7 +42,7 @@ const UserProfile = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.put('http://localhost:3000/api/user/profile', formData, {
+            const response = await axios.put('https://krishka-kitchen-2.onrender.com/api/user/profile', formData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUser(response.data);

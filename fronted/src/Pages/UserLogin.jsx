@@ -12,7 +12,7 @@ const UserLogin = () => {
         const password = e.target.password.value;
 
         try {
-            const response = await axios.post("http://localhost:3000/api/auth/login", { email, password }, { withCredentials: true });
+            const response = await axios.post("https://krishka-kitchen-2.onrender.com/api/auth/login", { email, password }, { withCredentials: true });
             if (response.status === 200) {
                 alert("Login Successful!");
                 localStorage.setItem('user', JSON.stringify(response.data.user));

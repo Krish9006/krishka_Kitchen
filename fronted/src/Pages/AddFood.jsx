@@ -36,7 +36,7 @@ const AddFood = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/api/food', formData, {
+            const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/food', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

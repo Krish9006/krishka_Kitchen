@@ -10,7 +10,7 @@ const PartnerOrders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/order/partner', {
+                const response = await axios.get('https://krishka-kitchen-2.onrender.com/api/order/partner', {
                     withCredentials: true // Important for cookies
                 });
                 setOrders(response.data);

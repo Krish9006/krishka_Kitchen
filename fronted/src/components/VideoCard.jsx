@@ -32,7 +32,7 @@ const VideoCard = ({ item, isActive }) => {
             try {
                 const token = localStorage.getItem('token');
                 if (token) {
-                    const res = await axios.get(`http://localhost:3000/api/social/status/${item._id}`, {
+                    const res = await axios.get(`https://krishka-kitchen-2.onrender.com/api/social/status/${item._id}`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     // Only update if server returns valid data, else fallback to props
@@ -75,7 +75,7 @@ const VideoCard = ({ item, isActive }) => {
         setLikesCount(prev => newIsLiked ? prev + 1 : prev - 1);
 
         try {
-            await axios.post(`http://localhost:3000/api/social/like/${item._id}`, {}, {
+            await axios.post(`https://krishka-kitchen-2.onrender.com/api/social/like/${item._id}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
         } catch (err) {
@@ -96,7 +96,7 @@ const VideoCard = ({ item, isActive }) => {
         // API Call
         try {
             if (token) {
-                await axios.post(`http://localhost:3000/api/social/share/${item._id}`, {}, {
+                await axios.post(`https://krishka-kitchen-2.onrender.com/api/social/share/${item._id}`, {}, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
             }

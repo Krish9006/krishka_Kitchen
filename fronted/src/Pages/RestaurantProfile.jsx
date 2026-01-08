@@ -12,7 +12,7 @@ const RestaurantProfile = () => {
     useEffect(() => {
         const fetchRestaurantData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/api/food/restaurant/${id}`);
+                const response = await axios.get(`https://krishka-kitchen-2.onrender.com/api/food/restaurant/${id}`);
 
                 if (response.data && response.data.length > 0) {
                     setMenuItems(response.data);

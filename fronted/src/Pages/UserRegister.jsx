@@ -13,7 +13,7 @@ const UserRegister = () => {
         const password = e.target.password.value;
 
         try {
-            const response = await axios.post('http://localhost:3000/api/auth/register', { name, email, password });
+            const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/auth/register', { name, email, password });
             if (response.status === 201) {
                 alert("Registration Successful!");
                 localStorage.setItem('user', JSON.stringify(response.data.user));

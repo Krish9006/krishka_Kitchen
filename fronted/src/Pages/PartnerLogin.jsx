@@ -14,7 +14,7 @@ const PartnerLogin = () => {
 
         try {
             // Correct API: /partner/login
-            const response = await axios.post("http://localhost:3000/api/auth/partner/login", { email, password }, { withCredentials: true });
+            const response = await axios.post("https://krishka-kitchen-2.onrender.com/api/auth/partner/login", { email, password }, { withCredentials: true });
             if (response.status === 200) {
                 alert("Login Successful!");
                 // Store partner data locally

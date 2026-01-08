@@ -23,7 +23,7 @@ const PartnerRegister = () => {
 
         try {
             // Correct Port 3000
-            const response = await axios.post('http://localhost:3000/api/auth/partner/register', formData, { withCredentials: true });
+            const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/auth/partner/register', formData, { withCredentials: true });
             if (response.status === 201) {
                 alert("Restaurant Registered Successfully!");
                 navigate('/food-partner/login');

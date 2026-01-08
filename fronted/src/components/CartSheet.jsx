@@ -19,7 +19,7 @@ const CartSheet = ({ isOpen, onClose }) => {
                 totalAmount: cartTotal
             };
 
-            const response = await axios.post('http://localhost:3000/api/order', orderData, {
+            const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/order', orderData, {
                 withCredentials: true
             });
 

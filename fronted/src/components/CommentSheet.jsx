@@ -17,7 +17,7 @@ const CommentSheet = ({ isOpen, onClose, foodId, onCommentAdded }) => {
         try {
             setLoading(true);
             const token = localStorage.getItem('token');
-            const response = await axios.get(`http://localhost:3000/api/social/comments/${foodId}`, {
+            const response = await axios.get(`https://krishka-kitchen-2.onrender.com/api/social/comments/${foodId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setComments(response.data);
@@ -34,7 +34,7 @@ const CommentSheet = ({ isOpen, onClose, foodId, onCommentAdded }) => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post(`http://localhost:3000/api/social/comment/${foodId}`,
+            const response = await axios.post(`https://krishka-kitchen-2.onrender.com/api/social/comment/${foodId}`,
                 { text: newComment },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
