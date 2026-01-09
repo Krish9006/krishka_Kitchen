@@ -6,7 +6,7 @@ This isn't just code; it's my take on building a full-stack food ordering platfo
 
 It's a work in progress, but it's got some cool stuff already!
 
-## 🚀 Logic & Tech Stack
+## Logic & Tech Stack
 
 I kept things fast and efficient. Here's what's powering the kitchen:
 
@@ -16,7 +16,7 @@ I kept things fast and efficient. Here's what's powering the kitchen:
 *   **Image Handling**: ImageKit & Multer for uploading food pictures.
 *   **Security**: JWT and Bcrypt to keep user data safe.
 
-## 🛠️ How to Cook (Run) it Locally
+##  How to Cook (Run) it Locally
 
 If you want to spin this up on your machine:
 
@@ -33,9 +33,9 @@ If you want to spin this up on your machine:
 
 That's it! You should see the app running.
 
-## 📝 Future Plans
+## Future Plans
 
 I'm constantly tweaking this. Planning to add more features like real-time order tracking and better payment integration soon.
 
 ---
-*Built with ❤️ and a lot of coffee.*
+*Built with  and a lot of coffee.*
