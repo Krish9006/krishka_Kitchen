@@ -24,7 +24,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/social", socialRoutes);
 
 app.get("/", (req, res) => {
-    res.send("Zomato Clone Backend - Server Running!");
+    res.send("Krishka Kitchen Backend - Server Running!");
 });
 
 module.exports = app;

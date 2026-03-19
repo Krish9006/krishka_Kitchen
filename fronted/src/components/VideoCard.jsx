@@ -109,7 +109,7 @@ const VideoCard = ({ item, isActive }) => {
         if (navigator.share) {
             navigator.share({
                 title: item.name,
-                text: `Check out this delicious ${item.name} on Zomato Clone!`,
+                text: `Check out this delicious ${item.name} on Krishka Kitchen!`,
                 url: window.location.href
             }).catch(console.error);
         } else {

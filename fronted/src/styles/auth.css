@@ -76,7 +76,7 @@
 .form-input:focus {
     outline: none;
     border-color: #ef4f5f;
-    /* Zomato Red Focus */
+    /* Krishka Kitchen Red Focus */
     background-color: #333;
     box-shadow: 0 0 0 4px rgba(239, 79, 95, 0.15);
 }
@@ -87,7 +87,7 @@
     border: none;
     border-radius: 10px;
     background: linear-gradient(45deg, #ef4f5f, #ff6b6b);
-    /* Zomato Gradient */
+    /* Krishka Kitchen Gradient */
     color: white;
     font-size: 1.1rem;
     font-weight: 700;

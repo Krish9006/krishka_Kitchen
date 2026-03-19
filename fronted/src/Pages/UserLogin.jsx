@@ -47,7 +47,7 @@ const UserLogin = () => {
                 </form>
 
                 <div className="auth-footer">
-                    New to Zomato? <Link to="/register" className="auth-link">Create account</Link>
+                    New to Krishka Kitchen? <Link to="/register" className="auth-link">Create account</Link>
                 </div>
             </div>
         </div>

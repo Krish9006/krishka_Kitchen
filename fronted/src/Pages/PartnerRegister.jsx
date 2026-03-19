@@ -37,7 +37,7 @@ const PartnerRegister = () => {
     return (
         <div className="auth-container">
             <div className="auth-card" style={{ maxWidth: '800px' }}>
-                <h1 className="auth-title">Partner with Zomato</h1>
+                <h1 className="auth-title">Partner with Krishka Kitchen</h1>
                 <p className="auth-subtitle">Register your restaurant and grow your business</p>
 
                 <form className="auth-form" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }} onSubmit={handleSubmit}>

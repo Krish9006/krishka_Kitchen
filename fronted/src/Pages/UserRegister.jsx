@@ -29,7 +29,7 @@ const UserRegister = () => {
     return (
         <div className="auth-container">
             <div className="auth-card">
-                <h1 className="auth-title">Zomato</h1>
+                <h1 className="auth-title">Krishka Kitchen</h1>
                 <p className="auth-subtitle">Create your account to start ordering</p>
 
                 <form className="auth-form" onSubmit={handleSubmit} >
