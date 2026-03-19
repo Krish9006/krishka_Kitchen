@@ -6,6 +6,7 @@ import AddFood from './Pages/AddFood';
 import PartnerProfile from './Pages/PartnerProfile';
 import UserProfile from './Pages/UserProfile';
 import { Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const getInitialTheme = () => {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/partner-profile' element={<PartnerProfile />} />
         <Route path='/profile' element={<UserProfile />} />
       </Routes>
+      <Toaster position="bottom-center" />
     </>
   )
 }

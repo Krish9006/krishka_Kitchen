@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -19,18 +20,25 @@ const CartSheet = ({ isOpen, onClose }) => {
                 totalAmount: cartTotal
             };
 
+            const token = localStorage.getItem('token');
+            if (!token) {
+                toast.error("Please login to place an order", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
+                return;
+            }
+
             const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/order', orderData, {
+                headers: { Authorization: `Bearer ${token}` },
                 withCredentials: true
             });
 
             if (response.status === 201) {
-                alert("Order Placed Successfully! 🎉");
+                toast.success("Order Placed Successfully! 🎉", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                 clearCart();
                 onClose();
             }
         } catch (error) {
             console.error("Checkout failed:", error);
-            alert("Failed to place order. Please try again.");
+            toast.error("Failed to place order. Please try again.", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     };
 

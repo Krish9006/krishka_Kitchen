@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -44,14 +45,14 @@ const AddFood = () => {
             });
 
             if (response.status === 201) {
-                alert("Food Item Added Successfully!");
+                toast.success("Food Item Added Successfully!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                 form.reset();
                 setVideoPreview(null);
                 navigate('/partner/profile');
             }
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || "Failed to add food");
+            toast.error(error.response?.data?.message || "Failed to add food", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     };
 

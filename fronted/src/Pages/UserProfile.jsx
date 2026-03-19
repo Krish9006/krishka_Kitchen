@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +50,7 @@ const UserProfile = () => {
             setIsEditing(false);
         } catch (error) {
             console.error("Update failed", error);
-            alert("Failed to update profile");
+            toast.error("Failed to update profile", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     };
 

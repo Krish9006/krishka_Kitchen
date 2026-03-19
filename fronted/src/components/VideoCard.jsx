@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
 import CommentSheet from './CommentSheet';
+import { toast } from 'react-hot-toast';
 
 const VideoCard = ({ item, isActive }) => {
     const videoRef = useRef(null);
@@ -61,13 +62,13 @@ const VideoCard = ({ item, isActive }) => {
     const handleOrderClick = (e) => {
         e.stopPropagation();
         addToCart(item);
-        alert(`Added ${item.name} to Cart! 🛒`);
+        toast.success(`Added ${item.name} to Cart! 🛒`, { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
     };
 
     const handleLike = async (e) => {
         e.stopPropagation();
         const token = localStorage.getItem('token');
-        if (!token) return alert("Please login to like");
+        if (!token) return toast.error("Please login to like", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
 
         // Optimistic UI Update
         const newIsLiked = !isLiked;
@@ -113,7 +114,7 @@ const VideoCard = ({ item, isActive }) => {
             }).catch(console.error);
         } else {
             navigator.clipboard.writeText(window.location.href);
-            alert("Link copied to clipboard!");
+            toast.success("Link copied to clipboard!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     };
 

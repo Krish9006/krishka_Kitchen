@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -98,7 +99,7 @@ const RestaurantProfile = () => {
                                     <div style={{ padding: '15px' }}>
                                         <h4 style={{ color: 'white', margin: '0 0 5px 0' }}>{item.name}</h4>
                                         <p style={{ color: '#888', fontSize: '0.85rem' }}>{item.description.substring(0, 60)}...</p>
-                                        <button className="auth-btn" style={{ marginTop: '10px', padding: '8px', fontSize: '0.8rem' }} onClick={() => alert("Order feature coming soon!")}>
+                                        <button className="auth-btn" style={{ marginTop: '10px', padding: '8px', fontSize: '0.8rem' }} onClick={() => toast.success("Order feature coming soon!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } })}>
                                             Order Now
                                         </button>
                                     </div>

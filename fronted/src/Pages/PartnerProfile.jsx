@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React, { useEffect, useState } from 'react';
 import '../styles/auth.css'; // Reusing premium auth styles for consistency
 import axios from 'axios';
@@ -31,7 +32,7 @@ const PartnerProfile = () => {
                 console.error("Error fetching data:", error);
                 // If 401, redirect to login
                 if (error.response && error.response.status === 401) {
-                    alert("Session expired. Please login again.");
+                    toast.error("Session expired. Please login again.", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                     navigate('/partner/login');
                 }
             }

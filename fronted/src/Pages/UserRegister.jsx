@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import '../styles/auth.css';
 import { Link, useNavigate } from 'react-router-dom';
@@ -15,14 +16,14 @@ const UserRegister = () => {
         try {
             const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/auth/register', { name, email, password });
             if (response.status === 201) {
-                alert("Registration Successful!");
+                toast.success("Registration Successful!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                 localStorage.setItem('user', JSON.stringify(response.data.user));
                 localStorage.setItem('token', response.data.token);
                 navigate('/');
             }
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || "Registration Failed");
+            toast.error(error.response?.data?.message || "Registration Failed", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     }
     return (

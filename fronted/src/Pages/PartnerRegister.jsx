@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import '../styles/auth.css';
 import { Link } from 'react-router-dom';
@@ -25,12 +26,12 @@ const PartnerRegister = () => {
             // Correct Port 3000
             const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/auth/partner/register', formData, { withCredentials: true });
             if (response.status === 201) {
-                alert("Restaurant Registered Successfully!");
+                toast.success("Restaurant Registered Successfully!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                 navigate('/food-partner/login');
             }
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || "Registration Failed");
+            toast.error(error.response?.data?.message || "Registration Failed", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     };
     return (

@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast';
 import React from 'react';
 import '../styles/auth.css';
 import { Link } from 'react-router-dom';
@@ -16,14 +17,14 @@ const PartnerLogin = () => {
             // Correct API: /partner/login
             const response = await axios.post("https://krishka-kitchen-2.onrender.com/api/auth/partner/login", { email, password }, { withCredentials: true });
             if (response.status === 200) {
-                alert("Login Successful!");
+                toast.success("Login Successful!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                 // Store partner data locally
                 localStorage.setItem('partner', JSON.stringify(response.data.partner));
                 navigate('/partner/profile'); // Redirect to Dashboard
             }
         } catch (error) {
             console.error(error);
-            alert(error.response?.data?.message || "Login Failed");
+            toast.error(error.response?.data?.message || "Login Failed", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
         }
     }
     return (
