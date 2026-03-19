@@ -14,13 +14,13 @@ const PartnerProfile = () => {
         const fetchPartnerData = async () => {
             try {
                 // 1. Fetch Partner Details from Database (via API)
-                const profileResponse = await axios.get("https://krishka-kitchen-2.onrender.com/api/auth/partner/profile", { withCredentials: true });
+                const profileResponse = await axios.get("https://krishka-kitchen-2.onrender.com/api/auth/partner/profile", { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }, withCredentials: true });
                 if (profileResponse.status === 200) {
                     setPartner(profileResponse.data.partner);
                 }
 
                 // 2. Fetch Menu Items
-                const menuResponse = await axios.get("https://krishka-kitchen-2.onrender.com/api/food/my-foods", { withCredentials: true });
+                const menuResponse = await axios.get("https://krishka-kitchen-2.onrender.com/api/food/my-foods", { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }, withCredentials: true });
                 if (menuResponse.status === 200) {
                     setMenuItems(menuResponse.data);
                     setStats({

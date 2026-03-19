@@ -20,6 +20,7 @@ const PartnerLogin = () => {
                 toast.success("Login Successful!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });
                 // Store partner data locally
                 localStorage.setItem('partner', JSON.stringify(response.data.partner));
+                localStorage.setItem('token', response.data.token);
                 navigate('/partner/profile'); // Redirect to Dashboard
             }
         } catch (error) {

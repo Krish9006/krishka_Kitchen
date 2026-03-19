@@ -37,12 +37,7 @@ const AddFood = () => {
         }
 
         try {
-            const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/food', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-                withCredentials: true
-            });
+            const response = await axios.post('https://krishka-kitchen-2.onrender.com/api/food', formData, { headers: { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${localStorage.getItem('token')}` }, withCredentials: true });
 
             if (response.status === 201) {
                 toast.success("Food Item Added Successfully!", { style: { borderRadius: '10px', background: '#333', color: '#fff' } });

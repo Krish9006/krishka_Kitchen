@@ -175,6 +175,7 @@ async function registerfoodpartner(req, res) {
         res.cookie("token", token, { httpOnly: true });
         res.status(201).json({
             message: "Food Partner registered successfully",
+            token: token,
             partner: {
                 _id: partner._id,
                 email: partner.email,
@@ -220,6 +221,7 @@ async function loginfoodpartner(req, res) {
 
         res.status(200).json({
             message: "Login successful",
+            token: token,
             partner: {
                 _id: partner._id,
                 email: partner.email,
